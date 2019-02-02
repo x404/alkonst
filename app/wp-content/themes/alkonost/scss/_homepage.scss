@@ -1,9 +1,14 @@
-#about-slider{
+#about-slider,
+#lastnews-carousel
+{
 	display: flex;
-	margin: 1rem 0;
 	&.slick-initialized{
 		display: block;
 	}
+}
+
+#about-slider{
+	margin: 1rem 0;
 	.slick-slide{
 		text-align: center;
 	}
@@ -74,7 +79,8 @@
 
 }
 
-// catalog
+/* =catalog
+---------------------------*/
 .catalog{
 	background-color: $color3;
 	color: $color2;
@@ -156,3 +162,256 @@
 		width: 100%;
 	}
 }
+/* =/catalog
+---------------------------*/
+
+
+/* =news lastnews
+---------------------------*/
+
+
+.datetime{
+	font-size: 1.2rem;
+	color: $color3;
+	display: flex;
+	time{
+		padding-left: 25px;
+		position: relative;
+		&:before{
+			// @extend .desaturate;
+			@extend .before;
+			@include sprite($icon-calendarsm);
+			left: 0;
+			top: 1px;
+		}
+	}
+}
+
+
+.news{
+	&__carousel{
+		position: relative;
+		&:before,
+		&:after{
+			@extend .before;
+			height: 100%;
+			width: 410px;
+			// top: -50px;
+			top: 0;
+			z-index: 2;
+		}
+		&:before{
+			left: 0;
+			@include gradient-horizontal(#bfbfdb, rgba(255,255,255,0));
+		}
+
+		&:after{
+			right: 0;
+			@include gradient-horizontal(rgba(255,255,255,0), #bfbfdb);
+		}
+
+		img{
+			max-width: 100%;
+		}
+	}
+
+
+	$r: 12px;
+	$r2: 10px;
+	padding-bottom: 5.8rem;
+	&__carousel{
+		margin-top: 5rem;
+		.owl-nav{
+			top: 178px;
+		}
+	}
+	&__datetime{
+		justify-content: center;
+	}
+
+	&__link{
+		@include transition;
+		color: $color1;
+		display: inline-block;
+		border: 3px solid rgba(255,255,255,0);
+		border-radius: $r;
+		text-decoration: none;
+		position: relative;
+		&:hover{
+			// border-color: $color3;
+			// color: $color3;
+			.news{
+				&__datetime{
+					// color: $color3;
+					time{
+						&:before{
+							filter: brightness(150);
+						}
+					}
+				}
+				&__pic{
+					&:after{
+						// opacity: 1;
+					}
+					&:before{
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+
+				&__desc{
+					opacity: 0;
+				}
+
+				&__bottom{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__pic{
+		position: relative;
+		img{
+			border-radius: $r2;
+			vertical-align: top;
+		}
+		&:before{
+			// @extend .before;
+			// @include transition;
+			// background: $color3;
+			// border-radius: 55px;
+			// color: $color2;
+			// // content: "ПОДРОБНЕЙ";
+			// height: 55px;
+			// left: 50%;
+			// $w : 175px;
+			// margin-left: -$w/2;
+			// margin-top: -26px;
+			// padding: 1.8rem 4rem; 
+			// text-align: center;
+			// top: 0;
+			// top: 50%;
+			// width: $w;
+			// z-index: 999;
+			// opacity: 0;
+			// transform: scale(1.25);
+		}
+		&:after{
+			// @extend .before;
+			// @include transition;
+			// background: rgba(255,255,255, .63);
+			// border-radius: $r2 $r2 0 0;
+			// height: 100%;
+			// left: 0;
+			// opacity: 0;
+			// top: 0;
+			// width: 100%;
+			// z-index: 99;
+		}
+	}
+
+	&__desc{
+		background: $color2;
+		border-radius: 0 0 8px 8px;
+		padding:1.9rem 0 3rem;
+		text-align: center;
+		width: 360px;
+		position: absolute;
+		height: 180px;
+		left: 0;
+		bottom: 0;
+		transition: opacity .3s;
+		hr{
+			width: 42px;
+			border: none;
+			border-top: 3px solid $color3;
+			background: none;
+		}
+	}
+
+	&__bottom{
+		background-color: rgba(41, 40, 81, 0.86);
+		border-radius: 10px;
+		bottom: 0;
+		color: $color2;
+		left: 0;
+		transition: opacity .3s;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		opacity: 0;
+		.news__title{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			margin-top: 0;
+		}
+		.datetime{
+			color: $color2;
+			position: absolute;
+			bottom: 30px;
+			width: 100%;
+			text-align: center;
+			time{
+				&:before{
+					filter: brightness(150);
+				}
+			}
+		}
+	}
+
+	&__title{
+		font-family: Cuprum;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		font-weight: normal;
+		margin-top: 3.3rem;
+		min-height: 7rem;
+		line-height: 1.2;
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+}
+
+
+.lastnews{
+	background-color: $color4;
+	padding-bottom: 9rem;
+	.slick{
+		&-arrow{
+			background: $color3 url(images/arrow-w.svg) no-repeat center;
+			border-radius: 50%;
+			border: none;
+			cursor: pointer;
+			height: 71px;
+			margin-top: -35px;
+			position: absolute;
+			top: 50%;
+			width: 71px;
+			padding: 0;
+			z-index: 10;
+			transition: opacity .3s;
+			opacity: 0.3;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		$x: 85px;
+		&-prev{
+			left: $x;
+		}
+		&-next{ 
+			right: $x;
+			transform: scale(-1, 1);
+		}
+	}
+}
+/* =/news lastnews
+---------------------------*/
+
+

@@ -20,6 +20,17 @@ $icon-calendar-total-width: 53px;
 $icon-calendar-total-height: 52px;
 $icon-calendar-image: 'images/sprite.png';
 $icon-calendar: (0px, 27px, 0px, -27px, 25px, 25px, 53px, 52px, 'images/sprite.png', 'icon-calendar', );
+$icon-calendarsm-name: 'icon-calendarsm';
+$icon-calendarsm-x: 25px;
+$icon-calendarsm-y: 27px;
+$icon-calendarsm-offset-x: -25px;
+$icon-calendarsm-offset-y: -27px;
+$icon-calendarsm-width: 16px;
+$icon-calendarsm-height: 15px;
+$icon-calendarsm-total-width: 53px;
+$icon-calendarsm-total-height: 52px;
+$icon-calendarsm-image: 'images/sprite.png';
+$icon-calendarsm: (25px, 27px, -25px, -27px, 16px, 15px, 53px, 52px, 'images/sprite.png', 'icon-calendarsm', );
 $icon-place-name: 'icon-place';
 $icon-place-x: 0px;
 $icon-place-y: 0px;
@@ -45,7 +56,7 @@ $icon-tel: (27px, 0px, -27px, 0px, 26px, 25px, 53px, 52px, 'images/sprite.png', 
 $spritesheet-width: 53px;
 $spritesheet-height: 52px;
 $spritesheet-image: 'images/sprite.png';
-$spritesheet-sprites: ($icon-calendar, $icon-place, $icon-tel, );
+$spritesheet-sprites: ($icon-calendar, $icon-calendarsm, $icon-place, $icon-tel, );
 $spritesheet: (53px, 52px, 'images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
