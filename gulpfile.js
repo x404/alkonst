@@ -64,7 +64,8 @@ gulp.task('compress', function(){
 				config.templateDir + '/js/popper.min.js',
 				config.templateDir + '/js/jquery.fancybox.min.js',
 				config.templateDir + '/js/collapse.js',
-				config.templateDir + '/js/slick.min.js'
+				config.templateDir + '/js/slick.min.js',
+				config.templateDir + '/js/jquery.fancybox.min.js'
 			]),
 			concat('libs.min.js'), // Собираем их в кучу в новом файле libs.min.js
 			uglify(), // Сжимаем JS файл
@@ -223,7 +224,8 @@ gulp.task('check-for-favicon-update', function(done) {
 gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	// переносим css файлы
 	var buildCss = gulp.src([ // Переносим CSS стили в продакшен
-		config.templateDir + '/style.min.css'
+		config.templateDir + '/style.min.css',
+		config.templateDir + '/css/jquery.fancybox.min.css'
 	])
 	.pipe(gulp.dest(config.destDir + '/themes/temac'));
 

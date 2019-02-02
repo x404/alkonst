@@ -3500,7 +3500,7 @@ em strong {
     bottom: 0;
     right: 0; }
   .header__body {
-    height: 1075px; }
+    height: 1035px; }
   .header .logo,
   .header .cell {
     position: relative; }
@@ -3510,6 +3510,7 @@ em strong {
     left: 0;
     top: 0; }
   .header .icon-place:before {
+    top: -3px;
     background-image: url(images/sprite.png);
     background-position: 0px 0px;
     width: 27px;
@@ -3520,6 +3521,7 @@ em strong {
     width: 25px;
     height: 25px; }
   .header .icon-tel:before {
+    top: -3px;
     background-image: url(images/sprite.png);
     background-position: -27px 0px;
     width: 26px;
@@ -3541,7 +3543,7 @@ em strong {
   .header .logo {
     display: flex;
     flex-grow: 1;
-    margin-top: -8rem; }
+    margin-top: -3rem; }
     .header .logo img {
       margin: auto; }
   .header .mouse {
@@ -3551,7 +3553,7 @@ em strong {
     bottom: 75px; }
 
 .section {
-  padding: 7.5rem 0; }
+  padding: 6.5rem 0; }
 
 h1 {
   font-family: 'Cuprum';
@@ -3564,7 +3566,8 @@ h1 {
     border-top: 2px solid #292851;
     left: 50%;
     transform: translateX(-50%);
-    width: 42px; }
+    width: 42px;
+    bottom: -6px; }
 
 /* =/header
 ---------------------------*/
@@ -3573,10 +3576,12 @@ h1 {
   padding: 2.5rem 0; }
 
 .about p {
+  line-height: 1.3;
   margin: 1.5rem 0; }
 
 #about-slider {
-  display: flex; }
+  display: flex;
+  margin: 1rem 0; }
   #about-slider.slick-initialized {
     display: block; }
   #about-slider .slick-slide {
@@ -3617,16 +3622,16 @@ h1 {
     padding: 0;
     position: absolute;
     top: 50%;
-    margin-top: -15px;
-    transform: scale(0.6);
+    margin-top: -28px;
+    transform: scale(0.65);
     transition: transform .3s; }
     #about-slider button.slick-prev {
-      left: -80px;
-      transform: scale(-0.6, 0.6); }
+      left: -85px;
+      transform: scale(-0.65, 0.65); }
       #about-slider button.slick-prev:hover {
         transform: scale(-1, 1); }
     #about-slider button.slick-next {
-      right: -80px; }
+      right: -85px; }
       #about-slider button.slick-next:hover {
         transform: scale(1); }
 
