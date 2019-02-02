@@ -3444,7 +3444,9 @@ em strong {
   .tdu:hover {
     text-decoration: none; }
 
-.before, .pattern-w:after, .pattern-f:after, .header:before, .header:after, .header .icon-place:before,
+.before, .pattern-b:after,
+.pattern-f:after,
+.pattern-w:after, .header:before, .header:after, .header .icon-place:before,
 .header .icon-calendar:before,
 .header .icon-tel:before, h1:after, #about-slider a:before, #about-slider a:after, .datetime time:before, .news__carousel:before, .news__carousel:after {
   content: "";
@@ -3457,7 +3459,7 @@ em strong {
   margin-top: 0.6rem;
   font-size: 16px; }
   .form-control:focus, .form-control:active {
-    border-color: #666;
+    border-color: #edecf6;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3); }
 
 .webp .header {
@@ -3465,23 +3467,26 @@ em strong {
 
 /* =header
 ---------------------------*/
+.pattern-b,
+.pattern-f,
 .pattern-w {
   position: relative; }
+  .pattern-b:after,
+  .pattern-f:after,
   .pattern-w:after {
-    background: url(images/pattern-w.png) repeat-x;
     height: 49px;
     bottom: 0;
     left: 0;
     width: 100%; }
 
-.pattern-f {
-  position: relative; }
-  .pattern-f:after {
-    background: url(images/pattern-f.png) repeat-x;
-    height: 49px;
-    bottom: 0;
-    left: 0;
-    width: 100%; }
+.pattern-b:after {
+  background: url(images/pattern-b.png) repeat-x; }
+
+.pattern-f:after {
+  background: url(images/pattern-f.png) repeat-x; }
+
+.pattern-w:after {
+  background: url(images/pattern-w.png) repeat-x; }
 
 .header {
   background-image: url(../images/header-bg.jpg);
@@ -3556,6 +3561,7 @@ em strong {
   padding: 6.5rem 0; }
 
 h1 {
+  color: #000;
   font-family: 'Cuprum';
   text-align: center;
   text-transform: uppercase;
@@ -3582,14 +3588,63 @@ h1 {
   line-height: 1.3;
   margin: 1.5rem 0; }
 
-/* =main
----------------------------*/
 .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0); }
+
+/* =subscribe
+---------------------------*/
+.subscribe {
+  background: #edecf6;
+  padding-bottom: 12rem; }
+  .subscribe form {
+    margin-top: 7rem; }
+  .subscribe .form-control {
+    border: 2px solid #292851;
+    height: 6rem;
+    flex-grow: 1;
+    margin-top: 0;
+    border-radius: 10px;
+    padding-left: 60px;
+    padding-right: 1.5rem;
+    background: #fff url(images/email-f.png) no-repeat 22px center;
+    outline: none;
+    color: #292851; }
+    .subscribe .form-control:focus {
+      border-color: #d7b94d;
+      background-image: url(images/email-yellow.png); }
+  .subscribe .submit {
+    background-color: #292851;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.6rem;
+    height: 6rem;
+    margin-left: 2.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color .3s;
+    width: 23rem; }
+    .subscribe .submit:hover {
+      background-color: #444370; }
+
+/* =/subscribe
+---------------------------*/
+.footer {
+  border-bottom: 10px solid #292851;
+  padding: 5.5rem 0 2.5rem; }
+  .footer .social {
+    margin: 4.7rem 0 3rem; }
+    .footer .social a {
+      margin: 0 1.2rem; }
+    .footer .social #prrfa {
+      stroke: red !important; }
+    .footer .social img {
+      stroke: red !important; }
 
 #about-slider,
 #lastnews-carousel {
@@ -3657,8 +3712,10 @@ h1 {
   background-color: #292851;
   color: #fff;
   padding-bottom: 10rem; }
-  .catalog h1:after {
-    border-top-color: #fff; }
+  .catalog h1 {
+    color: #fff; }
+    .catalog h1:after {
+      border-top-color: #fff; }
   .catalog a {
     color: #fff; }
   .catalog .row {
@@ -3666,9 +3723,9 @@ h1 {
   .catalog__item {
     margin-top: 3rem; }
   .catalog__link {
-    position: relative;
     display: block;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     .catalog__link:hover {
       text-decoration: none; }
       .catalog__link:hover .catalog__desc {
@@ -3762,6 +3819,18 @@ h1 {
       top: 178px; }
   .news__datetime {
     justify-content: center; }
+  .news__item {
+    text-align: center; }
+    .news__item .label {
+      background-color: #d7b94d;
+      border-radius: 5px;
+      font-size: 1.6rem;
+      padding: .4rem 2rem;
+      position: absolute;
+      right: 15px;
+      text-transform: uppercase;
+      top: 15px;
+      z-index: 100; }
   .news__link {
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;

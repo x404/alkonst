@@ -3,8 +3,6 @@ html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label{margin:0;
 header, section, footer, aside, nav, article {display:block}
 ul{list-style:none}
 
-$color5:#666;
-$color6:#ff5722;
 $color7:#80bbde;
 $color8:#292929;
 
@@ -130,11 +128,13 @@ em strong
 
 /* =header
 ---------------------------*/
-.pattern-w{
+.pattern-b,
+.pattern-f,
+.pattern-w
+{
 	position: relative;
 	&:after{
 		@extend .before;
-		background: url(images/pattern-w.png) repeat-x;
 		height: 49px;
 		bottom: 0;
 		left: 0;
@@ -142,17 +142,24 @@ em strong
 	}
 }
 
-.pattern-f{
-	position: relative;
+.pattern-b{
 	&:after{
-		@extend .before;
-		background: url(images/pattern-f.png) repeat-x;
-		height: 49px;
-		bottom: 0;
-		left: 0;
-		width: 100%;
+		background: url(images/pattern-b.png) repeat-x;		
 	}
 }
+
+.pattern-f{
+	&:after{
+		background: url(images/pattern-f.png) repeat-x;
+	}
+}
+
+.pattern-w{
+	&:after{
+		background: url(images/pattern-w.png) repeat-x;
+	}
+}
+
 
 
 .header{
@@ -262,6 +269,7 @@ em strong
 }
 
 h1{
+	color: $color1;
 	font-family: 'Cuprum';
 	text-align: center;
 	text-transform: uppercase;
@@ -298,16 +306,78 @@ h1{
 
 
 
-
-/* =main
----------------------------*/
-
-
-
 .visually-hidden{
 	position: absolute;
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
 	clip: rect(0 0 0 0);
+}
+
+
+
+
+/* =subscribe
+---------------------------*/
+.subscribe{
+	background: $color5;
+	padding-bottom: 12rem;
+	form{
+		margin-top: 7rem;
+	}
+	.form-control{
+		border: 2px solid $color3;
+		height: 6rem;
+		flex-grow: 1;
+		margin-top: 0;
+		border-radius: 10px;
+		padding-left: 60px;
+		padding-right: 1.5rem;
+		background: $color2 url(images/email-f.png) no-repeat 22px center;
+		outline: none;
+		color: $color3;
+		&:focus{
+			border-color: $color6;
+			background-image: url(images/email-yellow.png);
+		}
+	}
+	.submit{
+		background-color: $color3;
+		border-radius: 10px;
+		border: none;
+		color: $color2;
+		cursor: pointer;
+		font-size: 1.6rem;
+		height: 6rem;
+		margin-left: 2.7rem;
+		text-align: center;
+		text-transform: uppercase;
+		transition: background-color .3s;
+		width: 23rem;
+		&:hover{
+			background-color: #444370;
+		}
+	}
+}
+/* =/subscribe
+---------------------------*/
+
+
+
+.footer{
+	border-bottom: 10px solid $color3;
+	padding: 5.5rem 0 2.5rem;
+	.social{
+		margin: 4.7rem 0 3rem;
+		a{
+			margin: 0 1.2rem;
+		}
+		#prrfa{
+			stroke: red !important;
+		}
+		img{
+			stroke: red !important;
+			// filter: grayscale(100%) brightness(0.2)
+		}
+	}
 }

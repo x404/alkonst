@@ -118,6 +118,8 @@ gulp.task('sprite-create', ['sprite-clean'], function () {
 });
 
 
+
+
 gulp.task('img', function() {
     return gulp.src(config.templateDir + '/images/**/*') // Берем все изображения из app
         .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
