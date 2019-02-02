@@ -95,3 +95,15 @@ $(document).ready(function(){
 		]
 	});		
 });
+
+
+document.querySelector('.address').addEventListener('click', function(e){
+    document.querySelector('body').classList.toggle('o-map')
+    return false;
+})
+
+
+document.querySelector('.close-map').addEventListener('click', function(e){
+    document.querySelector('body').classList.remove('o-map');
+    return false;
+})

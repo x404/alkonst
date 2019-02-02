@@ -33,6 +33,17 @@
 <body>
 
 <div id="fullpage" class="homepage">
+	<div id="map">
+		<div id="ymap"></div>
+		<button type="button" data-dismiss="modal" class="close-map" tabindex="10">
+			<svg width="28" height="28">
+				<line x1="0" y1="0" x2="28" y2="28"/>
+				<line x1="28" y1="0" x2="0" y2="28"/>
+			</svg>
+		</button>
+	</div>
+
+
 	<div id="section1" class="">
 		<!-- =header --> 
 		<header class="header pattern-b">
@@ -348,5 +359,33 @@
 <div id="outdated"></div>
 <script type="text/javascript" src="/wp-content/themes/alkonost/js/slick.min.js"></script>
 <script src="/wp-content/themes/alkonost/js/engine.js"></script>
+
+<script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
+<script>
+var map;
+var myCollection;	
+ymaps.ready(function () {
+	map = new ymaps.Map('ymap', {
+		center: [ 55.913354, 37.841756 ],
+		zoom: 17
+	});
+    myPlacemark = new ymaps.Placemark(map.getCenter(), {
+            balloonContent: 'г. Королёв, мкр. Костино, ул. Калининградская д.17, корп.1, офис XX',
+            iconCaption: ''
+    }, {
+         preset: 'islands#redDotIcon'
+    }),
+	map.behaviors.disable('scrollZoom'); 
+	map.geoObjects.add(myPlacemark);
+	map.events.add('click', function onMapClick(e) {
+		if(map.behaviors.isEnabled('scrollZoom')) {
+			map.events.remove('click', onMapClick);
+		} else {
+			map.behaviors.enable(['scrollZoom']);
+		}
+	});
+})
+</script>
+
 </body>
 </html>

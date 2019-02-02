@@ -3,10 +3,6 @@ html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label{margin:0;
 header, section, footer, aside, nav, article {display:block}
 ul{list-style:none}
 
-$color7:#80bbde;
-$color8:#292929;
-
-
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -163,7 +159,7 @@ em strong
 
 
 .header{
-	background-image: url(../images/header-bg.jpg);
+	background-image: url(images/header-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: $color2;
@@ -209,6 +205,7 @@ em strong
 		&:before{
 			top: -3px;
 			@include sprite($icon-place);
+			z-index: 10;
 		}
 	}
 
@@ -236,6 +233,24 @@ em strong
 		margin-right: 8rem;
 		position: relative;
 		z-index: 1;
+		&:after{
+			@extend .before;
+			background: url(images/map-arrow.png) no-repeat left top;
+			height: 58px;
+			width: 322px;
+			top: -11rem;
+			left: -147px;
+			z-index: 1;
+			transition: .3s;
+		}
+		&:hover{
+			&:after{
+				top: -4.5rem;
+			}
+			&:before{
+				opacity: .7;
+			}
+		}
 	}
 	.tel{
 		position: relative;
@@ -377,7 +392,52 @@ h1{
 		}
 		img{
 			stroke: red !important;
-			// filter: grayscale(100%) brightness(0.2)
+		}
+	}
+}
+
+#map{
+	background-color: $color2;
+	transition: .4s;
+	height: 0;
+	overflow: hidden;
+	position: relative;
+	z-index: 99;
+	z-index: 20;
+	.close-map{
+		border: none;
+		background: none;
+		position: absolute;
+		z-index: 100;
+		right: 5px;
+		top: 50px;
+		cursor: pointer;
+		svg{
+			transition: .3s;
+		}
+		&:hover{
+			svg{
+				transform: rotate(90deg)
+			}
+		}
+	}
+	line{
+		stroke: #292851;
+		stroke-width: 5;
+	}
+}
+
+#ymap{
+	height: 630px;
+}
+
+.o-map{
+	#map{
+		height: 630px;
+	}
+	.address{
+		&:after{
+			top: -4.5rem;
 		}
 	}
 }
