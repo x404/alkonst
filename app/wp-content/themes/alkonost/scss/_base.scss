@@ -281,6 +281,9 @@ h1{
 /* =/header
 ---------------------------*/
 
+.ucase{
+	text-transform: uppercase;
+}
 
 .about{
 	.text{
@@ -294,81 +297,7 @@ h1{
 }
 
 
-#about-slider{
-	display: flex;
-	margin: 1rem 0;
-	&.slick-initialized{
-		display: block;
-	}
-	.slick-slide{
-		text-align: center;
-	}
-	a{
-		display: inline-block;
-		position: relative;
-		&:before{
-			@extend .before;
-			opacity: 0;
-			background: url(images/zoom.svg) no-repeat center;
-			height: 63px;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			transition: opacity .3s;
-			width: 63px;
-			z-index: 2;
-		}
-		&:after{
-			@extend .before;
-			border: 3px solid rgba(255,255,255,0);
-			border-radius: 10px;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			transition: .3s;
-		}
-		&:hover{
-			&:before{
-				opacity: 1;
-			}
-			&:after{
-				background: rgba(255,255,255,0.35);
-				border-color: $color3;
-			}
-		}
-	}
-	img{
-		display: block;
-		border-radius: 10px;
-	}
-	button{
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 0;
-		position: absolute;
-		top: 50%;
-		margin-top: -28px;
-		transform: scale(.65);
-		transition: transform .3s;
-		$x: -85px;
-		&.slick-prev{
-			left: $x;
-			transform: scale(-.65,.65);
-			&:hover{
-				transform: scale(-1,1)
-			}
-		}
-		&.slick-next{
-			right: $x;
-			&:hover{
-				transform: scale(1)
-			}
-		}
-	}
 
-}
 
 
 /* =main
