@@ -404,6 +404,7 @@ h1{
 	position: relative;
 	z-index: 99;
 	z-index: 20;
+	transition-timing-function: cubic-bezier(0.57, 0, 0.44, 0.96);
 	.close-map{
 		border: none;
 		background: none;
@@ -413,7 +414,8 @@ h1{
 		top: 50px;
 		cursor: pointer;
 		svg{
-			transition: .3s;
+			transition: .4s;
+
 		}
 		&:hover{
 			svg{

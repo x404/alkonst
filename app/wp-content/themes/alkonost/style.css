@@ -3666,7 +3666,8 @@ h1 {
   overflow: hidden;
   position: relative;
   z-index: 99;
-  z-index: 20; }
+  z-index: 20;
+  transition-timing-function: cubic-bezier(0.57, 0, 0.44, 0.96); }
   #map .close-map {
     border: none;
     background: none;
@@ -3676,7 +3677,7 @@ h1 {
     top: 50px;
     cursor: pointer; }
     #map .close-map svg {
-      transition: .3s; }
+      transition: .4s; }
     #map .close-map:hover svg {
       transform: rotate(90deg); }
   #map line {
