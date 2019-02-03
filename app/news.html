@@ -86,14 +86,14 @@
 			<header>
 				<h1>Новости и акции</h1>
 				<div class="filter">
-					<a href="#" data-category="all" class="active">Все</a>
-					<a href="#" data-category="news">Новости</a>
-					<a href="#" data-category="actions">Акции</a>
+					<a href="#" data-category="" class="nav-link active">Все</a>
+					<a href="#" data-category="new" class="nav-link">Новости</a>
+					<a href="#" data-category="action" class="nav-link">Акции</a>
 				</div>
 			</header>
 			<div class="listnews">
 				<div class="row">
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -108,7 +108,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item action">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -124,7 +124,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -139,7 +139,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -154,7 +154,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -169,7 +169,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -184,7 +184,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item action">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -200,7 +200,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -215,7 +215,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -233,7 +233,7 @@
 				</div>
 				
 				<div class="row hidenews">
-					<div class="col-lg-4 new">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -248,7 +248,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4 action">
+					<div class="col-lg-4 item action">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -264,7 +264,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4 new">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -279,7 +279,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4 new">
+					<div class="col-lg-4 item new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -368,8 +368,37 @@
 			document.querySelector('.hidenews').classList.remove('hidenews')
 			document.querySelector('.loader').remove()
 		}, 300)
+	});
 
+
+	[].forEach.call( document.querySelectorAll('.filter .nav-link'), function(el, i){
+		el.addEventListener('click', function(e){
+			e.preventDefault();
+
+			// set active buttons
+			document.querySelector('.filter .nav-link.active').classList.remove('active')
+            el.classList.add('active');
+
+            // select items
+            $current_cat = this.dataset.category;
+            $items = document.querySelectorAll('.listnews .item');
+
+			if ($current_cat == ''){ 
+				$items.forEach(function(item,i,arr){
+					item.classList.remove('hide');
+				})
+			} else {
+				$items.forEach(function(item,i,arr){
+					if (item.classList.contains($current_cat)){
+						item.classList.remove('hide');
+					} else{
+						item.classList.add('hide');
+					}
+				});
+			}
+		})
 	})
+
 </script>
 
 <script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>

@@ -4225,6 +4225,9 @@ h1 {
 .slick-arrow.slick-hidden {
   display: none; }
 
+.hide {
+  display: none; }
+
 .breadcrumbs {
   background-color: #292851;
   padding: 2.5rem 0;
