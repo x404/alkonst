@@ -1,7 +1,10 @@
+.hidenews,
 .hide{
 	display: none;
 }
 
+/* =breadcrumbs
+---------------------------*/
 .breadcrumbs{
 	background-color: $color3;
 	padding: 2.5rem 0;
@@ -30,10 +33,10 @@
 		color: $color2;	
 	}
 }
+/* =breadcrumbs
+---------------------------*/
 
-.hidenews{
-	display: none;
-}
+
 
 .lastnews{
 	.more{

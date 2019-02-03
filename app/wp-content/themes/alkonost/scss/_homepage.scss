@@ -200,7 +200,6 @@
 			@extend .before;
 			height: 100%;
 			width: 410px;
-			// top: -50px;
 			top: 0;
 			z-index: 2;
 		}
@@ -218,7 +217,6 @@
 			max-width: 100%;
 		}
 	}
-
 
 	$r: 12px;
 	$r2: 10px;
@@ -253,7 +251,6 @@
 		@include transition;
 		color: $color1;
 		display: inline-block;
-		// border: 3px solid rgba(255,255,255,0);
 		border-radius: $r;
 		text-decoration: none;
 		position: relative;
@@ -348,15 +345,20 @@
 	&__title{
 		font-family: Cuprum;
 		font-size: 2.2rem;
-		text-transform: uppercase;
 		font-weight: normal;
+		line-height: 1.2;
 		margin-top: 3.3rem;
 		min-height: 7rem;
-		line-height: 1.2;
 		padding-left: 3rem;
 		padding-right: 3rem;
+		text-transform: uppercase;
 	}
+}
 
+
+.subcatalog{
+	background-color: $color4;
+	padding-bottom: 15rem;	
 }
 
 

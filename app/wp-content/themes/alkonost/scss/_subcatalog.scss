@@ -1,0 +1,106 @@
+.subcatalog{
+	$r: 12px;
+	$r2: 10px;
+	padding-bottom: 16rem;
+
+	&__item{
+		margin-top: 3rem;
+		text-align: center;
+		.label{
+			background-color: red;
+			color: $color2;
+			border-radius: 5px;
+			font-size: 1.6rem;
+			padding: .4rem 2rem;
+			position: absolute;
+			right: 15px;
+			text-transform: uppercase;
+			top: 15px;
+			z-index: 100;
+		}
+	}
+
+	&__link{
+		@include transition;
+		color: $color1;
+		display: inline-block;
+		border-radius: $r;
+		text-decoration: none;
+		position: relative;
+		&:hover{
+			.subcatalog{
+				&__pic{
+					&:before{
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+
+				&__desc{
+					opacity: 0;
+				}
+
+				&__bottom{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__pic{
+		position: relative;
+		img{
+			border-radius: $r2;
+			vertical-align: top;
+		}
+	}
+
+	&__desc{
+		background: $color2;
+		border-radius: 0 0 8px 8px;
+		padding:1.9rem 0 3rem;
+		text-align: center;
+		width: 360px;
+		position: absolute;
+		height: 180px;
+		left: 0;
+		bottom: 0;
+		transition: opacity .3s;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__bottom{
+		background-color: rgba(41, 40, 81, 0.86);
+		border-radius: 10px;
+		bottom: 0;
+		color: $color2;
+		left: 0;
+		transition: opacity .3s;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 0;
+		opacity: 0;
+		.subcatalog__title{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			margin-top: 0;
+		}
+	}
+
+	&__title{
+		font-family: Cuprum;
+		font-size: 2.2rem;
+		font-weight: normal;
+		line-height: 1.2;
+		padding-left: 3rem;
+		padding-right: 3rem;
+		text-transform: uppercase;
+	}
+}
