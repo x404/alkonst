@@ -3,8 +3,8 @@ $(document).ready(function(){
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		// appendArrows: '.top-goods-nav',
-		prevArrow : '<button type="button" class="slick-prev" aria-label="Назад"><img src="/wp-content/themes/alkonost/images/about-arrow.svg" /></button>',
-		nextArrow: '<button class="slick-next" aria-label="Вперед" type="button"><img src="/wp-content/themes/alkonost/images/about-arrow.svg" /></button>',
+		prevArrow : '<button type="button" class="slick-prev" aria-label="Назад"><img src="/wp-content/themes/alkonost/images/about-arrow.svg" alt="" /></button>',
+		nextArrow: '<button class="slick-next" aria-label="Вперед" type="button"><img src="/wp-content/themes/alkonost/images/about-arrow.svg" alt="" /></button>',
 		// autoplay: true,
 		// autoplaySpeed: 2000,
 		responsive: [

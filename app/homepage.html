@@ -37,7 +37,7 @@
 <div id="fullpage">
 	<div id="map">
 		<div id="ymap"></div>
-		<button type="button" data-dismiss="modal" class="close-map" tabindex="10">
+		<button type="button" data-dismiss="modal" class="close-map" aria-label="Закрыть карту">
 			<svg width="28" height="28">
 				<line x1="0" y1="0" x2="28" y2="28"/>
 				<line x1="28" y1="0" x2="0" y2="28"/>
@@ -86,16 +86,16 @@
 
 			<div id="about-slider">
 				<div>
-					<a href="images/slide-1.jpg" data-fancybox="about-gallery"><img src="images/slide-1.jpg" alt=""></a>
+					<a href="images/slide-1.jpg" title="" aria-hidden="true" data-fancybox="about-gallery"><img src="images/slide-1.jpg" alt=""></a>
 				</div>
 				<div>
-					<a href="images/slide-2.jpg" data-fancybox="about-gallery"><img src="images/slide-2.jpg" alt=""></a>
+					<a href="images/slide-2.jpg" title="" aria-hidden="true" data-fancybox="about-gallery"><img src="images/slide-2.jpg" alt=""></a>
 				</div>
 				<div>
-					<a href="images/slide-3.jpg" data-fancybox="about-gallery"><img src="images/slide-3.jpg" alt=""></a>
+					<a href="images/slide-3.jpg" title="" aria-hidden="true" data-fancybox="about-gallery"><img src="images/slide-3.jpg" alt=""></a>
 				</div>
 				<div>
-					<a href="images/slide-2.jpg" data-fancybox="about-gallery"><img src="images/slide-2.jpg" alt=""></a>
+					<a href="images/slide-2.jpg" title="" aria-hidden="true" data-fancybox="about-gallery"><img src="images/slide-2.jpg" alt=""></a>
 				</div>
 			</div>
 
@@ -318,7 +318,7 @@
 					<form action="#" method="post">
 						<fieldset>
 							<div class="d-flex">
-								<input type="email" value="" placeholder="Ваш email" class="form-control" >
+								<input type="email" name="email" value="" placeholder="Ваш email" class="form-control" aria-label="Ваш email" >
 								<input type="submit" class="submit" value="Подписаться" />
 							</div>
 						</fieldset>
@@ -332,19 +332,19 @@
 	<!-- =footer -->
 	<footer class="footer text-center">
 		<div class="container">
-			<a href="/" title="">
+			<a href="/" title="На главную">
 				<picture>
-					 <source srcset="/wp-content/themes/alkonost/images/logo-sm.webp" type="image/webp">
+					<source srcset="/wp-content/themes/alkonost/images/logo-sm.webp" type="image/webp">
 					<img src="/wp-content/themes/alkonost/images/logo-sm.png" alt="" />	
 				</picture>
 			</a>
 			<div class="social d-flex align-center justify-content-center">
-				<a href="#" title="" target="_blank"><img src="/wp-content/themes/alkonost/images/social/twitter.png" alt=""></a>
-				<a href="#" title="" target="_blank"><img src="/wp-content/themes/alkonost/images/social/instagram.png" alt=""></a>
-				<a href="#" title="" target="_blank"><img src="/wp-content/themes/alkonost/images/social/fb.png" alt=""></a>
-				<a href="#" title="" target="_blank"><img src="/wp-content/themes/alkonost/images/social/odn.png" alt=""></a>
-				<a href="#" title="" target="_blank"><img src="/wp-content/themes/alkonost/images/social/googleplus.png" alt=""></a>
-				<a href="#" title="" target="_blank"><img src="/wp-content/themes/alkonost/images/social/vk.png" alt=""></a>
+				<a href="#" title="Twitter" target="_blank"><img src="/wp-content/themes/alkonost/images/social/twitter.png" alt=""></a>
+				<a href="#" title="instagram" target="_blank"><img src="/wp-content/themes/alkonost/images/social/instagram.png" alt=""></a>
+				<a href="#" title="Facebook" target="_blank"><img src="/wp-content/themes/alkonost/images/social/fb.png" alt=""></a>
+				<a href="#" title="Одноклассники" target="_blank"><img src="/wp-content/themes/alkonost/images/social/odn.png" alt=""></a>
+				<a href="#" title="Google Plus" target="_blank"><img src="/wp-content/themes/alkonost/images/social/googleplus.png" alt=""></a>
+				<a href="#" title="Вконтакте" target="_blank"><img src="/wp-content/themes/alkonost/images/social/vk.png" alt=""></a>
 			</div>
 			<div class="copyright">© «Алконост» 2003 — 2019 <br>Все права защищены</div>	
 		</div>
