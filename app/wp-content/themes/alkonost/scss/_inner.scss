@@ -7,8 +7,8 @@
 ---------------------------*/
 .breadcrumbs{
 	background-color: $color3;
-	padding: 2.5rem 0;
 	color: $color2;
+	padding: 2.5rem 0;
 	ul{
 		display: flex;
 		li:not(.current){
@@ -18,11 +18,11 @@
 			&:after{
 				@extend .before;
 				background: url(images/arrowbr.png) no-repeat right center;
-				width: 18px;
 				height: 6px;
+				margin-top: -3px;
 				right: 0;
 				top: 50%;
-				margin-top: -3px;
+				width: 18px;
 			}
 		}
 		.current{
@@ -43,11 +43,11 @@
 		margin: 8rem 0 4rem;
 	}
 	.filter{
-		margin-right: 1.5rem;
 		font-size: 1.4rem;
-		text-align: right;
+		margin-right: 1.5rem;
 		margin-top: -1.4rem;
 		position: relative;
+		text-align: right;
 		a{
 			margin-left: .7rem;
 			color: $color3;
