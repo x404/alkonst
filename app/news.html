@@ -230,10 +230,7 @@
 							</a>
 						</div>
 					</div>					
-				</div>
-				
-				<div class="row hidenews">
-					<div class="col-lg-4 item new">
+					<div class="col-lg-4 item item-hide new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -248,7 +245,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4 item action">
+					<div class="col-lg-4 item item-hide action">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -264,7 +261,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4 item new">
+					<div class="col-lg-4 item item-hide new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -279,7 +276,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4 item new">
+					<div class="col-lg-4 item item-hide new">
 						<div class="news__item">
 							<a href="new.html" class="news__link">
 								<div class="news__pic"><img class="img-responsive" src="images/news/new-1.jpg" alt=""></div>
@@ -294,6 +291,9 @@
 							</a>
 						</div>
 					</div>			
+				</div>
+				
+				<div class="row hidenews">
 				</div>
 
 			</div>
@@ -357,23 +357,32 @@
 <script src="/wp-content/themes/alkonost/js/engine.js"></script>
 
 <script>
-	document.querySelector('#morenews').addEventListener('click', function(e){
+	let $moreEl = document.querySelector('#morenews');
+	$moreEl.addEventListener('click', function(e){
 		e.preventDefault();
 		let element = document.createElement('div'),
 			$this = this;
 		element.classList.add('loader');
 		document.querySelector('.more').append(element);
 		$this.remove();			
+
 		setTimeout(function(){
-			document.querySelector('.hidenews').classList.remove('hidenews')
-			document.querySelector('.loader').remove()
+			$items = document.querySelectorAll('.item-hide');
+			$items.forEach(function(item,i,arr){
+				item.classList.remove('item-hide')
+			});
+			document.querySelector('.loader').remove();
 		}, 300)
 	});
 
 
+
+	// FILTER
 	[].forEach.call( document.querySelectorAll('.filter .nav-link'), function(el, i){
 		el.addEventListener('click', function(e){
 			e.preventDefault();
+			
+			document.querySelector('.listnews').classList.add('loading');
 
 			// set active buttons
 			document.querySelector('.filter .nav-link.active').classList.remove('active')
@@ -383,19 +392,39 @@
             $current_cat = this.dataset.category;
             $items = document.querySelectorAll('.listnews .item');
 
-			if ($current_cat == ''){ 
-				$items.forEach(function(item,i,arr){
-					item.classList.remove('hide');
-				})
-			} else {
-				$items.forEach(function(item,i,arr){
-					if (item.classList.contains($current_cat)){
+
+
+            setTimeout(function(){
+            	document.querySelector('.listnews').classList.remove('loading');
+	            if ($current_cat != ''){ // если выбраны все категории, то подсчет пропускаем
+					$currentcat_length1 = document.querySelectorAll('.listnews .' + $current_cat).length;
+					$currentcat_length2 = document.querySelectorAll('.listnews .hide.' + $current_cat).length;
+					$currentcat_length = $currentcat_length1 - $currentcat_length2;
+					if ($currentcat_length > 9){
+						$moreEl.classList.remove('hide')
+					} else {
+						$moreEl.classList.add('hide')
+					}            	
+	            }
+
+
+				if ($current_cat == ''){ 
+					$items.forEach(function(item,i,arr){
 						item.classList.remove('hide');
-					} else{
-						item.classList.add('hide');
-					}
-				});
-			}
+						$moreEl.classList.remove('hide')
+					})
+				} else {
+					$items.forEach(function(item,i,arr){
+						if (item.classList.contains($current_cat)){
+							item.classList.remove('hide');
+						} else{
+							item.classList.add('hide');
+						}
+					});
+				}
+            }, 300)
+
+
 		})
 	})
 

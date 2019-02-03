@@ -1,6 +1,7 @@
 .hide{
 	display: none;
 }
+
 .breadcrumbs{
 	background-color: $color3;
 	padding: 2.5rem 0;
@@ -62,6 +63,14 @@
 	margin-top: 2.5rem;
 	.news__item{
 		margin-top: 3rem;
+	}
+
+	.item-hide{
+		display: none;
+	}
+
+	&.loading{
+		opacity: .6;
 	}
 }
 

@@ -4274,6 +4274,10 @@ h1 {
   margin-top: 2.5rem; }
   .listnews .news__item {
     margin-top: 3rem; }
+  .listnews .item-hide {
+    display: none; }
+  .listnews.loading {
+    opacity: .6; }
 
 .loader {
   background: url(images/loader.gif) no-repeat center;
