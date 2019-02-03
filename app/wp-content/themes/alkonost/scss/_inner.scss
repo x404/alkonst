@@ -95,3 +95,52 @@
 		filter: brightness(10);
 	}
 }
+
+
+.mainimg{
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+// content
+main{
+	background-color: $color4;
+	font-size: 1.6rem;	
+	padding-top: 6.5rem;
+	padding-bottom: 10.5rem;
+	.content{
+		background-color: $color2;
+		border-radius: 8px;
+		margin-bottom: 6rem;
+		margin-top: 6rem;
+	}
+
+	h1{
+		font-size: 3.6rem;
+		position: relative;
+	}
+
+	p{
+		line-height: 1.6;
+		margin: 3rem 0;
+	}
+
+	img{
+		max-width: 100%;
+	}
+
+	.datetime {
+		margin: 3rem 0 -1rem;
+	}
+}
+
+
+.justifyleft {text-align:left !important; }
+.justifyright {text-align:right !important; }
+.justifycenter {text-align: center !important; }
+.justifyfull {text-align:justify !important; }
+
+img.justifyleft, table.justifyleft {float:left; margin-right:10px;margin-bottom:5px;}
+img.justifyright, table.justifyright {float:right; margin-left:10px;margin-bottom:5px;}
+img.justifycenter, table.justifycenter { display: block; margin-left: auto; margin-right: auto;}

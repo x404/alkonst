@@ -260,7 +260,7 @@ em strong
 	.logo{
 		display: flex;
 		flex-grow: 1;
-		margin-top: -3rem;
+		margin-top: 1rem;
 		a,
 		img{
 			margin: auto;			
@@ -275,11 +275,16 @@ em strong
 	}
 
 	&__body{
-		min-height: 59rem;
+		min-height: 58rem;
 	}
+
+
 	&-homepage{
 		.header__body{
 			height: 1035px;
+		}
+		.logo{
+			margin-top: -3rem;
 		}
 	}
 }
@@ -300,10 +305,10 @@ h1{
 	&:after{
 		@extend .before;
 		border-top: 2px solid $color3;
+		bottom: -6px;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 42px;
-		bottom: -6px;
 	}
 }
 /* =/header
