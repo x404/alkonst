@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ru">
+<html lang="ru"><!-- InstanceBegin template="/Templates/homepage.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -19,8 +19,9 @@
 <meta name="msapplication-TileImage" content="/the_favicon/mstile-144x144.png">
 <meta name="msapplication-config" content="/the_favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-
+<!-- InstanceBeginEditable name="doctitle" -->
 <title>Главная</title>
+<!-- InstanceEndEditable -->
 <link rel="stylesheet" href="/wp-content/themes/alkonost/style.min.css" />
 <script src="/wp-content/themes/alkonost/js/libs.min.js"></script>
 
@@ -28,11 +29,12 @@
 <link rel="stylesheet" href="outdatedbrowser/outdatedbrowser.min.css" />
 <script src="/outdatedbrowser/outdatedbrowser.min.js"></script>
 <script src="/outdatedbrowser/detect.js"></script>
-
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
 </head>
 <body>
 
-<div id="fullpage" class="homepage">
+<div id="fullpage">
 	<div id="map">
 		<div id="ymap"></div>
 		<button type="button" data-dismiss="modal" class="close-map" tabindex="10">
@@ -42,33 +44,31 @@
 			</svg>
 		</button>
 	</div>
-
-
-	<div id="section1" class="">
-		<!-- =header --> 
-		<header class="header pattern-b">
-			<div class="container">
-				<div class="header__body d-flex flex-column">
-					<div class="top d-flex justify-content-between">
-						<div class="cell">
-							<div class="time icon-calendar">График работы: ежедневно 9:00 - 23:00</div>
-						</div>
-						<div class="cell">
-							<div class="d-flex">
-								<div class="address icon-place">107045, Россия, Москва ул. Сретенка, 9</div>
-								<div class="tel icon-tel"><a href="tel:+84950090271" title="">8 495 009 02 71</a></div>
-							</div>
-						</div>
+	
+	<!-- InstanceBeginEditable name="EditRegion3" -->
+	<!-- =header --> 
+	<header class="header header-homepage pattern-b">
+		<div class="container">
+			<div class="header__body d-flex flex-column">
+				<div class="top d-flex justify-content-between">
+					<div class="cell">
+						<div class="time icon-calendar">График работы: ежедневно 9:00 - 23:00</div>
 					</div>
-					<div class="logo">
-						<img src="/wp-content/themes/alkonost/images/logo.png" alt="Алконост" />
+					<div class="cell">
+						<div class="d-flex">
+							<div class="address icon-place">107045, Россия, Москва ул. Сретенка, 9</div>
+							<div class="tel icon-tel"><a href="tel:+84950090271" title="">8 495 009 02 71</a></div>
+						</div>
 					</div>
 				</div>
-				<img src="wp-content/themes/alkonost/images/mouse.png" alt="" class="mouse">
+				<div class="logo">
+					<img src="/wp-content/themes/alkonost/images/logo.png" alt="Алконост" />
+				</div>
 			</div>
-		</header>
-		<!-- =/header -->
-	</div>
+			<img src="wp-content/themes/alkonost/images/mouse.png" alt="" class="mouse">
+		</div>
+	</header>
+	<!-- =/header -->
 
 	<!-- =about -->
 	<div class="section about pattern-f">
@@ -108,7 +108,6 @@
 		</div>
 	</div>
 	<!-- =/about -->
-
 
 	<!-- =catalog -->
 	<div class="section catalog pattern-b text-center">
@@ -306,7 +305,7 @@
 		</div>
 	</section>
 	<!-- =/lastnews -->
-
+	<!-- InstanceEndEditable -->
 
 	<!-- =subscribe -->
 	<section class="subscribe section pattern-w">
@@ -329,8 +328,7 @@
 		</div>
 	</section>
 	<!-- =/subscribe -->
-
-
+	
 	<!-- =footer -->
 	<footer class="footer text-center">
 		<div class="container">
@@ -361,31 +359,6 @@
 <script src="/wp-content/themes/alkonost/js/engine.js"></script>
 
 <script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
-<script>
-var map;
-var myCollection;	
-ymaps.ready(function () {
-	map = new ymaps.Map('ymap', {
-		center: [ 55.767818, 37.631442 ],
-		zoom: 18
-	});
-    myPlacemark = new ymaps.Placemark(map.getCenter(), {
-            balloonContent: 'г. Москва ул. Сретенка, 9',
-            iconCaption: ''
-    }, {
-         preset: 'islands#redDotIcon'
-    }),
-	map.behaviors.disable('scrollZoom'); 
-	map.geoObjects.add(myPlacemark);
-	map.events.add('click', function onMapClick(e) {
-		if(map.behaviors.isEnabled('scrollZoom')) {
-			map.events.remove('click', onMapClick);
-		} else {
-			map.behaviors.enable(['scrollZoom']);
-		}
-	});
-})
-</script>
-
+<script src="/wp-content/themes/alkonost/js/map.js"></script>
 </body>
-</html>
+<!-- InstanceEnd --></html>

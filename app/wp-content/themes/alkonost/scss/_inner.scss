@@ -1,0 +1,85 @@
+.breadcrumbs{
+	background-color: $color3;
+	padding: 2.5rem 0;
+	color: $color2;
+	ul{
+		display: flex;
+		li:not(.current){
+			margin-right: 10px;
+			padding-right: 28px;
+			position: relative;
+			&:after{
+				@extend .before;
+				background: url(images/arrowbr.png) no-repeat right center;
+				width: 18px;
+				height: 6px;
+				right: 0;
+				top: 50%;
+				margin-top: -3px;
+			}
+		}
+		.current{
+			color: $color4;
+		}
+	}
+	a{
+		color: $color2;	
+	}
+}
+
+.hidenews{
+	display: none;
+}
+
+.lastnews{
+	.more{
+		margin: 8rem 0 4rem;
+	}
+	.filter{
+		margin-right: 1.5rem;
+		font-size: 1.4rem;
+		text-align: right;
+		margin-top: -1.4rem;
+		position: relative;
+		a{
+			margin-left: .7rem;
+			color: $color3;
+			@extend .tdu;
+			&.active{
+				color: $color2;
+				cursor: default;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+.listnews{
+	margin-top: 2.5rem;
+	.news__item{
+		margin-top: 3rem;
+	}
+}
+
+.loader{
+	background: url(images/loader.gif) no-repeat center;
+	width: 256px;
+	height: 32px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+#morenews{
+	color: $color3;
+	background: url('images/icon_arrow_down.svg') no-repeat right top 5px;
+	padding-right: 15px;
+	transition: none;
+	&:hover{
+		color: $color2;
+		text-decoration: none;
+		filter: brightness(10);
+	}
+}

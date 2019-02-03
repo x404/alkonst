@@ -236,7 +236,8 @@
 	&__item{
 		text-align: center;
 		.label{
-			background-color: $color6;
+			background-color: red;
+			color: $color2;
 			border-radius: 5px;
 			font-size: 1.6rem;
 			padding: .4rem 2rem;

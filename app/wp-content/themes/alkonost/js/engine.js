@@ -93,7 +93,7 @@ $(document).ready(function(){
 			  }
 			}
 		]
-	});		
+	});
 });
 
 
@@ -107,3 +107,5 @@ document.querySelector('.close-map').addEventListener('click', function(e){
     document.querySelector('body').classList.remove('o-map');
     return false;
 })
+
+
