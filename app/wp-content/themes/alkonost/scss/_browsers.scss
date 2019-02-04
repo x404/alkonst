@@ -17,4 +17,17 @@ _::-webkit-full-page-media, _:future, :root .selector {
 
 //ie11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.header .logo{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10%;
+		width: 300px;
+	}
+
+	.header-homepage{
+		.logo{
+			margin-top: 20%;
+		}
+	}
 }
