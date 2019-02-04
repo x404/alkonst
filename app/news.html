@@ -55,7 +55,7 @@
 						<div class="time icon-calendar">График работы: ежедневно 9:00 - 23:00</div>
 					</div>
 					<div class="cell">
-						<div class="d-flex">
+						<div class="d-flex right">
 							<div class="address icon-place">107045, Россия, Москва ул. Сретенка, 9</div>
 							<div class="tel icon-tel"><a href="tel:+84950090271" title="">8 495 009 02 71</a></div>
 						</div>
@@ -351,6 +351,83 @@
 <div id="outdated"></div>
 <script type="text/javascript" src="/wp-content/themes/alkonost/js/slick.min.js"></script>
 <script src="/wp-content/themes/alkonost/js/engine.js"></script>
+
+<!-- InstanceBeginEditable name="EditRegion4" -->
+<script>
+	let $moreEl = document.querySelector('#morenews');
+	$moreEl.addEventListener('click', function(e){
+		e.preventDefault();
+		let element = document.createElement('div'),
+			$this = this;
+		element.classList.add('loader');
+		document.querySelector('.more').append(element);
+		$this.remove();			
+
+		setTimeout(function(){
+			$items = document.querySelectorAll('.item-hide');
+			$items.forEach(function(item,i,arr){
+				item.classList.remove('item-hide')
+			});
+			document.querySelector('.loader').remove();
+		}, 300)
+	});
+
+
+
+	// FILTER
+	[].forEach.call( document.querySelectorAll('.filter .nav-link'), function(el, i){
+		el.addEventListener('click', function(e){
+			e.preventDefault();
+			
+			document.querySelector('.listnews').classList.add('loading');
+
+			// set active buttons
+			document.querySelector('.filter .nav-link.active').classList.remove('active')
+            el.classList.add('active');
+
+            // select items
+            $current_cat = this.dataset.category;
+            $items = document.querySelectorAll('.listnews .item');
+
+
+
+            setTimeout(function(){
+            	document.querySelector('.listnews').classList.remove('loading');
+	            if ($current_cat != ''){ // если выбраны все категории, то подсчет пропускаем
+					$currentcat_length1 = document.querySelectorAll('.listnews .' + $current_cat).length;
+					$currentcat_length2 = document.querySelectorAll('.listnews .hide.' + $current_cat).length;
+					$currentcat_length = $currentcat_length1 - $currentcat_length2;
+					if ($currentcat_length > 9){
+						$moreEl.classList.remove('hide')
+					} else {
+						$moreEl.classList.add('hide')
+					}            	
+	            }
+
+
+				if ($current_cat == ''){ 
+					$items.forEach(function(item,i,arr){
+						item.classList.remove('hide');
+						$moreEl.classList.remove('hide')
+					})
+				} else {
+					$items.forEach(function(item,i,arr){
+						if (item.classList.contains($current_cat)){
+							item.classList.remove('hide');
+						} else{
+							item.classList.add('hide');
+						}
+					});
+				}
+            }, 300)
+
+
+		})
+	})
+
+</script>
+
+<!-- InstanceEndEditable --> 
 
 <script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
 <script src="/wp-content/themes/alkonost/js/map.js"></script>

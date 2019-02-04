@@ -1,3 +1,18 @@
+@media (max-width: 1280px){
+	.header__body{
+		height: 600px;
+	}
+	.header-homepage{
+		.header__body{
+			height: 600px;
+		}
+	}
+	
+	.header .logo{
+		margin-top: -3rem;
+	}
+}
+
 @media (max-width: 1250px){
 	.header{
 		.address{
@@ -130,10 +145,10 @@
 			padding-right: 2rem;
 		}
 		.logo{
-			display: block;
+			// display: block;
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: 4rem;
+			// margin-top: 4rem;
 			img{
 				width: 175px;
 			}
@@ -148,5 +163,15 @@
 
 	.section{
 		padding: 5rem 0;
+	}
+
+	.breadcrumbs{
+		ul{
+			display: block;
+			li{
+				display: inline-block;
+			}
+		}
+		text-align: center;
 	}
 }

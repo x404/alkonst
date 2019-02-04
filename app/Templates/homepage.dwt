@@ -99,6 +99,10 @@
 <script type="text/javascript" src="/wp-content/themes/alkonost/js/slick.min.js"></script>
 <script src="/wp-content/themes/alkonost/js/engine.js"></script>
 
+<!-- TemplateBeginEditable name="EditRegion4" -->
+
+<!-- TemplateEndEditable --> 
+
 <script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
 <script src="/wp-content/themes/alkonost/js/map.js"></script>
 </body>
