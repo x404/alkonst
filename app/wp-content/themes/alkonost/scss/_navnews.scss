@@ -118,6 +118,7 @@
 		&__prev,
 		&__next
 		{
+			min-height: 45px;
 			width: 42%;
 		}
 	}
@@ -138,9 +139,10 @@
 			float: none !important;
 			margin: 3rem 0;
 			width: 100%;
+			min-height: 0;
 			&:before{
 				top: 50%;
-				margin-top: -17px;
+				margin-top: -12px;
 			}
 		}
 

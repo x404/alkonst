@@ -21,6 +21,7 @@ var gulp 		= require('gulp'),
 
 var config = {
 	templateDir : 'app/wp-content/themes/alkonost',
+	destTemplateDir : 'dist/wp-content/themes/alkonost',
 	destDir : 'dist',
 	libsDir : 'app/libs'
 };
@@ -57,13 +58,13 @@ gulp.task('compress', function(){
 			gulp.src([  // Берем все необходимые библиотеки
 				config.templateDir + '/js/modernizr-custom-webp.js',
 				config.libsDir + '/jquery/dist/jquery.js',
-				config.libsDir + '/jquery-validation/dist/jquery.validate.js',
-				config.templateDir + '/js/util.js',
-				config.templateDir + '/js/tab.js',
-				config.templateDir + '/js/modal.js',
-				config.templateDir + '/js/popper.min.js',
+				// config.libsDir + '/jquery-validation/dist/jquery.validate.js',
+				// config.templateDir + '/js/util.js',
+				// config.templateDir + '/js/tab.js',
+				// config.templateDir + '/js/modal.js',
+				// config.templateDir + '/js/popper.min.js',
 				config.templateDir + '/js/jquery.fancybox.min.js',
-				config.templateDir + '/js/collapse.js',
+				// config.templateDir + '/js/collapse.js',
 				config.templateDir + '/js/slick.min.js',
 				config.templateDir + '/js/jquery.fancybox.min.js'
 			]),
@@ -128,7 +129,7 @@ gulp.task('img', function() {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         })))
-        .pipe(gulp.dest('dist/themes/temac/images')); // Выгружаем на продакшен
+        .pipe(gulp.dest(config.destTemplateDir + '/images')); // Выгружаем на продакшен
 });
 
 
@@ -226,33 +227,34 @@ gulp.task('check-for-favicon-update', function(done) {
 gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	// переносим css файлы
 	var buildCss = gulp.src([ // Переносим CSS стили в продакшен
-		config.templateDir + '/style.min.css',
+		config.templateDir + '/style.css',
+		config.templateDir + '/style.min.css'
+	])
+	.pipe(gulp.dest(config.destTemplateDir + ''));
+
+	var buildCss2 = gulp.src([ // Переносим CSS стили в продакшен
 		config.templateDir + '/css/jquery.fancybox.min.css'
 	])
-	.pipe(gulp.dest(config.destDir + '/themes/temac'));
-
-	var buildCss2= gulp.src([ // Переносим CSS стили в продакшен
-		config.templateDir + '/css/selectize.css'
-	])
-	.pipe(gulp.dest(config.destDir + '/themes/temac/css'));
+	.pipe(gulp.dest(config.destTemplateDir + '/css'));
 
 
-	var buildPHP= gulp.src([ // Переносим CSS стили в продакшен
-		config.templateDir + '/css/ss'
-	])
-	.pipe(gulp.dest(config.destDir + '/themes/temac/css'));
 
-
-	var buildFavicon = gulp.src('app/*.php').pipe(gulp.dest(config.destDir + '/'));
 	var buildHtml = gulp.src('app/*.html').pipe(gulp.dest(config.destDir + '/'));
 	var buildHtaccess = gulp.src('app/.htaccess').pipe(gulp.dest(config.destDir));
 	var buildrobots = gulp.src('app/robots.txt').pipe(gulp.dest(config.destDir));
-	var buildJs = gulp.src(config.templateDir + '/js/**/*').pipe(gulp.dest(config.destDir + '/themes/temac/js'));
-	var buildImages = gulp.src('app/images/**/*').pipe(gulp.dest(config.destDir + '/images'));
-	var buildTmp = gulp.src('app/tmp/*').pipe(gulp.dest(config.destDir + '/tmp'));
-	// var buildFonts = gulp.src(config.templateDir + '/fonts/**/*').pipe(gulp.dest(config.destDir + '/themes/temac/fonts')); // Переносим шрифты в продакшен
+	var buildJs = gulp.src([
+		config.templateDir + '/js/libs.min.js',
+		config.templateDir + '/js/map.js',
+		config.templateDir + '/js/engine.js'
+	])
+	.pipe(gulp.dest(config.destTemplateDir + '/js'));
+
+
+	var buildImages = gulp.src(config.templateDir + 'images/**/*').pipe(gulp.dest(config.destTemplateDir + '/images'));
+	var buildFonts = gulp.src(config.templateDir + '/fonts/**/*').pipe(gulp.dest(config.destTemplateDir + '/fonts')); // Переносим шрифты в продакшен
 	var buildOutdate = gulp.src('app/outdatedbrowser/**/*').pipe(gulp.dest(config.destDir + '/outdatedbrowser'));
-	var faviconData = gulp.src('app/faviconData.json').pipe(gulp.dest(config.destDir));
+	var buildImages = gulp.src('app/images/**/*').pipe(gulp.dest(config.destDir + '/images'));
+	// var faviconData = gulp.src('app/faviconData.json').pipe(gulp.dest(config.destDir));
 
 });
 
@@ -266,9 +268,10 @@ gulp.task('default', ['watcher']);
 
 
 
-
 // var config = {
-// 	templateDir : 'app/themes/temac',
+// 	templateDir : 'app/wp-content/themes/alkonost',
+// 	destTemplateDir : 'dist/wp-content/themes/alkonost',
 // 	destDir : 'dist',
 // 	libsDir : 'app/libs'
 // };
+

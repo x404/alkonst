@@ -96,7 +96,6 @@
 <link rel="stylesheet" property="stylesheet" href="/wp-content/themes/alkonost/css/jquery.fancybox.min.css" />
 
 <div id="outdated"></div>
-<script type="text/javascript" src="/wp-content/themes/alkonost/js/slick.min.js"></script>
 <script src="/wp-content/themes/alkonost/js/engine.js"></script>
 
 <!-- TemplateBeginEditable name="EditRegion4" -->
