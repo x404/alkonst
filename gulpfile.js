@@ -248,7 +248,8 @@ gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	var buildFonts = gulp.src(config.templateDir + '/fonts/**/*').pipe(gulp.dest(config.destTemplateDir + '/fonts')); // Переносим шрифты в продакшен
 	var buildOutdate = gulp.src('app/outdatedbrowser/**/*').pipe(gulp.dest(config.destDir + '/outdatedbrowser'));
 	var buildImages = gulp.src('app/images/**/*').pipe(gulp.dest(config.destDir + '/images'));
-	// var faviconData = gulp.src('app/faviconData.json').pipe(gulp.dest(config.destDir));
+	var buildIFavicon = gulp.src('app/the_favicon/**/*').pipe(gulp.dest(config.destDir + '/the_favicon'));
+	var faviconData = gulp.src('app/faviconData.json').pipe(gulp.dest(config.destDir));
 
 });
 
