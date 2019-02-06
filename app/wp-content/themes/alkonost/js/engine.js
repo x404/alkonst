@@ -1,5 +1,5 @@
-$(document).ready(function(){
-	$('#about-slider').slick({
+jQuery(document).ready(function(jQuery){
+	jQuery('#about-slider').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		prevArrow : '<button type="button" class="slick-prev" aria-label="Назад"><img src="/wp-content/themes/alkonost/images/about-arrow.svg" alt="" /></button>',
@@ -49,7 +49,7 @@ $(document).ready(function(){
 		]
 	});	
 
-	$('#lastnews-carousel').slick({
+	jQuery('#lastnews-carousel').slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		prevArrow : '<button type="button" class="slick-prev" aria-label="Назад"></button>',

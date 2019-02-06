@@ -57,14 +57,7 @@ gulp.task('compress', function(){
 	pump([
 			gulp.src([  // Берем все необходимые библиотеки
 				config.templateDir + '/js/modernizr-custom-webp.js',
-				config.libsDir + '/jquery/dist/jquery.js',
-				// config.libsDir + '/jquery-validation/dist/jquery.validate.js',
-				// config.templateDir + '/js/util.js',
-				// config.templateDir + '/js/tab.js',
-				// config.templateDir + '/js/modal.js',
-				// config.templateDir + '/js/popper.min.js',
-				config.templateDir + '/js/jquery.fancybox.min.js',
-				// config.templateDir + '/js/collapse.js',
+				// config.libsDir + '/jquery/dist/jquery.js',
 				config.templateDir + '/js/slick.min.js',
 				config.templateDir + '/js/jquery.fancybox.min.js'
 			]),
@@ -243,6 +236,7 @@ gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	var buildHtaccess = gulp.src('app/.htaccess').pipe(gulp.dest(config.destDir));
 	var buildrobots = gulp.src('app/robots.txt').pipe(gulp.dest(config.destDir));
 	var buildJs = gulp.src([
+		config.libsDir + '/jquery/dist/jquery.slim.min.js',
 		config.templateDir + '/js/libs.min.js',
 		config.templateDir + '/js/map.js',
 		config.templateDir + '/js/engine.js'

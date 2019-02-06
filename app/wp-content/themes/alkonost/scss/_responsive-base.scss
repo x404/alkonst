@@ -111,6 +111,24 @@
 				}
 			}
 		}
+
+		.tooltip{
+			display: none;
+		}
+
+		&:hover{
+			.underline-closing{
+				&:before,
+				&:after{
+					width: 50% !important;
+				}
+			}
+		}
+		.address .underline-closing{
+			&:after{
+				left: 0;
+			}
+		}
 	}
 }
 
@@ -148,16 +166,21 @@
 			padding-right: 2rem;
 		}
 		.logo{
-			// display: block;
 			margin-left: auto;
 			margin-right: auto;
-			// margin-top: 4rem;
 			img{
 				width: 175px;
 			}
 		}
 		&__body{
 			height: auto !important;
+		}
+
+		.underline-closing{
+			&:before,
+			&:after{
+				display: none !important;
+			}
 		}
 	}
 	h1{

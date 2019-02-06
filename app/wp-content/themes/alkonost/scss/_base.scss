@@ -226,19 +226,19 @@ em strong
 
 	.address{
 		cursor: pointer;
-		padding-left: 4rem;
 		margin-right: 8rem;
+		padding-left: 4rem;
 		position: relative;
-		z-index: 1;
+		z-index: 12;
 		&:after{
 			@extend .before;
 			background: url(images/map-arrow.png) no-repeat left top;
 			height: 58px;
-			width: 322px;
-			top: -11rem;
 			left: -147px;
-			z-index: 1;
+			top: -11rem;
 			transition: .3s;
+			width: 322px;
+			z-index: 1;
 		}
 		&:hover{
 			&:after{
@@ -246,6 +246,66 @@ em strong
 			}
 			&:before{
 				opacity: .7;
+			}
+			.tooltip{
+				opacity: 1;
+				// z-index: 1000;
+				top: 40px;
+			}
+			.underline-closing{
+				&:after,
+				&:before{
+					border-bottom: 1px dashed #fff;
+					width: calc(50% - 2rem);
+				}
+
+			}
+		}
+
+		.underline-closing{
+			&:before,
+			&:after{
+				position: absolute;
+				z-index: -1;
+				transition: .7s;
+				content: "";
+				width: 3px;
+				height: 1px;
+				bottom: 0;
+			}
+			&:before {
+				right: 0;
+			}
+			&:after {
+				left: 4rem;
+			}
+		}
+
+
+		.tooltip{
+			background-color: $color4;
+			border-radius: 6px;
+			color: $color3;			
+			left: 50%;
+			opacity: 0;
+			padding: 1.5rem 0;
+			position: absolute;
+			top: 50px;
+			transform: translateX(-50%);
+			transition: .3s;
+			width: 17rem;
+			text-align: center;
+			&:before{
+				@extend .before;
+				top: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid $color4;
+
 			}
 		}
 	}
