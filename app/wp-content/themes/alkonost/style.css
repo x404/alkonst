@@ -3461,7 +3461,8 @@ em strong {
 .pattern-f:after,
 .pattern-w:after, .header:before, .header:after, .header .icon-place:before,
 .header .icon-calendar:before,
-.header .icon-tel:before, .header .address:after, .header .address .tooltip:before, h1:after, #about-slider a:before, #about-slider a:after, .datetime time:before, .news__carousel:before, .news__carousel:after, .breadcrumbs ul li:not(.current):after, .navnews__prev:before, .navnews__next:before {
+.header .icon-tel:before, .header .address:after, .header .address .tooltip:before, h1:after, #about-slider a:before, #about-slider a:after, .datetime time:before, .news__carousel:before, .news__carousel:after, .breadcrumbs ul li:not(.current):after, .navnews .nav-previous a:before,
+.navnews .nav-next a:before {
   content: "";
   display: block;
   position: absolute; }
@@ -4250,11 +4251,15 @@ img.justifycenter, table.justifycenter {
 ---------------------------*/
 .navnews {
   overflow: hidden; }
-  .navnews__prev {
-    float: left; }
-  .navnews__next {
-    float: right; }
-  .navnews__prev, .navnews__next {
+  .navnews .nav-previous {
+    float: left;
+    display: flex; }
+  .navnews .nav-next {
+    float: right;
+    display: flex; }
+  .navnews .nav-previous a,
+  .navnews .nav-next a {
+    display: flex;
     font-family: Cuprum;
     color: #292851;
     text-transform: uppercase;
@@ -4264,7 +4269,8 @@ img.justifycenter, table.justifycenter {
     width: 410px;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
-    .navnews__prev:before, .navnews__next:before {
+    .navnews .nav-previous a:before,
+    .navnews .nav-next a:before {
       background-image: url(images/sprite.png);
       background-position: -25px -27px;
       width: 11px;
@@ -4273,30 +4279,33 @@ img.justifycenter, table.justifycenter {
       transition: opacity 0.2s ease-out;
       top: 50%;
       margin-top: -10px; }
-    .navnews__prev:hover, .navnews__next:hover {
+    .navnews .nav-previous a:hover,
+    .navnews .nav-next a:hover {
       color: #fff;
       text-decoration: none; }
-      .navnews__prev:hover img, .navnews__next:hover img {
+      .navnews .nav-previous a:hover img,
+      .navnews .nav-next a:hover img {
         border-color: #fff; }
-      .navnews__prev:hover:before, .navnews__next:hover:before {
+      .navnews .nav-previous a:hover:before,
+      .navnews .nav-next a:hover:before {
         filter: brightness(10); }
-  .navnews__prev {
+  .navnews .nav-previous a {
     padding-left: 4rem; }
-    .navnews__prev:before {
+    .navnews .nav-previous a:before {
       left: 6px; }
-    .navnews__prev .navnews__text {
+    .navnews .nav-previous a .navnews__text {
       padding-left: 0.8rem; }
-  .navnews__next {
+  .navnews .nav-next a {
     padding-right: 2rem;
     justify-content: flex-end; }
-    .navnews__next:before {
+    .navnews .nav-next a:before {
       -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       transform: rotate(180deg);
       right: 0; }
-    .navnews__next .navnews__pic {
+    .navnews .nav-next a .navnews__pic {
       order: 2; }
-    .navnews__next .navnews__text {
+    .navnews .nav-next a .navnews__text {
       text-align: right;
       padding-right: 0.8rem; }
   .navnews__pic {
@@ -4323,7 +4332,8 @@ img.justifycenter, table.justifycenter {
 @media (max-width: 980px) {
   .navnews__pic {
     display: none; }
-  .navnews__prev, .navnews__next {
+  .navnews .nav-next a,
+  .navnews .nav-previous a {
     min-height: 45px;
     width: 42%; } }
 
@@ -4334,15 +4344,17 @@ img.justifycenter, table.justifycenter {
     padding-top: 0; }
     .navnews__text {
       width: 100%; }
-    .navnews__prev, .navnews__next {
+    .navnews .nav-next a,
+    .navnews .nav-previous a {
       float: none !important;
       margin: 3rem 0;
       width: 100%;
       min-height: 0; }
-      .navnews__prev:before, .navnews__next:before {
+      .navnews .nav-next a:before,
+      .navnews .nav-previous a:before {
         top: 50%;
         margin-top: -12px; }
-    .navnews__next {
+    .navnews__next a {
       text-align: right; } }
 
 .subcatalog {
